@@ -17,6 +17,16 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "coben-ui-common": [
+        "dist/coben-ui-common",
+        "dist/coben-ui-common"
+      ],
+      "coben-ui-common/*": [
+        "dist/coben-ui-common/*",
+        "dist/coben-ui-common/*"
+      ]
+    }
   }
 }

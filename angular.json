@@ -2,5 +2,271 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "coben-ui": {
+      "root": "projects/coben-ui/",
+      "sourceRoot": "projects/coben-ui/src",
+      "projectType": "application",
+      "prefix": "cbn-ui",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/coben-ui",
+            "index": "projects/coben-ui/src/index.html",
+            "main": "projects/coben-ui/src/main.ts",
+            "polyfills": "projects/coben-ui/src/polyfills.ts",
+            "tsConfig": "projects/coben-ui/tsconfig.app.json",
+            "assets": ["projects/coben-ui/src/favicon.ico", "projects/coben-ui/src/assets"],
+            "styles": ["projects/coben-ui/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/coben-ui/src/environments/environment.ts",
+                  "with": "projects/coben-ui/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "coben-ui:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "coben-ui:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "coben-ui:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/coben-ui/src/test.ts",
+            "polyfills": "projects/coben-ui/src/polyfills.ts",
+            "tsConfig": "projects/coben-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/coben-ui/karma.conf.js",
+            "styles": ["projects/coben-ui/src/styles.scss"],
+            "scripts": [],
+            "assets": ["projects/coben-ui/src/favicon.ico", "projects/coben-ui/src/assets"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/coben-ui/tsconfig.app.json",
+              "projects/coben-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "coben-ui-finance": {
+      "root": "projects/coben-ui-finance/",
+      "sourceRoot": "projects/coben-ui-finance/src",
+      "projectType": "application",
+      "prefix": "cbn-ui-fs",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "baseHref": "/finance/",
+            "outputPath": "dist/coben-ui-finance",
+            "index": "projects/coben-ui-finance/src/index.html",
+            "main": "projects/coben-ui-finance/src/main.ts",
+            "polyfills": "projects/coben-ui-finance/src/polyfills.ts",
+            "tsConfig": "projects/coben-ui-finance/tsconfig.app.json",
+            "assets": [
+              "projects/coben-ui-finance/src/favicon.ico",
+              "projects/coben-ui-finance/src/assets"
+            ],
+            "styles": ["projects/coben-ui-finance/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/coben-ui-finance/src/environments/environment.ts",
+                  "with": "projects/coben-ui-finance/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "coben-ui-finance:build",
+            "baseHref": "/",
+            "port": 4201
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "coben-ui-finance:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "coben-ui-finance:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/coben-ui-finance/src/test.ts",
+            "polyfills": "projects/coben-ui-finance/src/polyfills.ts",
+            "tsConfig": "projects/coben-ui-finance/tsconfig.spec.json",
+            "karmaConfig": "projects/coben-ui-finance/karma.conf.js",
+            "styles": ["projects/coben-ui-finance/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "projects/coben-ui-finance/src/favicon.ico",
+              "projects/coben-ui-finance/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/coben-ui-finance/tsconfig.app.json",
+              "projects/coben-ui-finance/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "coben-ui-common": {
+      "root": "projects/coben-ui-common",
+      "sourceRoot": "projects/coben-ui-common/src",
+      "projectType": "library",
+      "prefix": "cbn-common",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/coben-ui-common/tsconfig.lib.json",
+            "project": "projects/coben-ui-common/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/coben-ui-common/src/test.ts",
+            "tsConfig": "projects/coben-ui-common/tsconfig.spec.json",
+            "karmaConfig": "projects/coben-ui-common/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/coben-ui-common/tsconfig.lib.json",
+              "projects/coben-ui-common/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "coben-ui"
 }
