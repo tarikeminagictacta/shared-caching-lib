@@ -41,7 +41,11 @@
             "main": "projects/coben-ui/src/main.ts",
             "polyfills": "projects/coben-ui/src/polyfills.ts",
             "tsConfig": "projects/coben-ui/tsconfig.app.json",
-            "assets": ["projects/coben-ui/src/favicon.ico", "projects/coben-ui/src/assets"],
+            "assets": [
+              "projects/coben-ui/src/favicon.ico",
+              "projects/coben-ui/src/assets",
+              "projects/coben-ui/src/web.config"
+            ],
             "styles": ["projects/coben-ui/src/styles.scss"],
             "scripts": [],
             "es5BrowserSupport": true

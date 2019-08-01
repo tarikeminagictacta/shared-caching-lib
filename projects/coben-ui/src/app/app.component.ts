@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CachedService } from '@coben/common';
 
 @Component({
   selector: 'cbn-ui-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'coben-ui';
+  data$ = this.cachedSerivce.getDataArray();
+
+  constructor(private cachedSerivce: CachedService) {}
 }
